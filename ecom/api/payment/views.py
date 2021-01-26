@@ -4,13 +4,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 import braintree
+import os
 
 gateway = braintree.BraintreeGateway(
     braintree.Configuration(
         braintree.Environment.Sandbox,
-        merchant_id="sqb9b8c32gwnytyt",
-        public_key="88k5ptyzzhjrb9pf",
-        private_key="dc78f919d82645a59ece3cc5d73d6f41"
+        merchant_id=os.getenv("MERCHANT_ID"),
+        public_key=os.getenv("PUBLIC_KEY"),
+        private_key=os.getenv("PRIVATE_KEY")
     )
 )
 

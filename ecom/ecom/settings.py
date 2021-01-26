@@ -2,11 +2,11 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = '8$%dnt@ux18caw3+%if8ku(#7^v&!t2-(z7_&2e(y@%8ii8a#1'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["oceanatech.pythonanywhere.com", "http://localhost:8000/admin/", ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -109,7 +109,14 @@ USE_TZ = False
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-STATIC_URL = '/static/'
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_URL = '/static/'
+
+STATIC_URL = '/static/'
+STATIC_DIR = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS=[
+    STATIC_DIR,
+    STATIC_ROOT,
+]
