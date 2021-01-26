@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #343a40;
+}
+
+.main_body {
+  min-height: 72vh;
+}
+
+.bg-custom {
+  background-color: #131A22;
+}
