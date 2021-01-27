@@ -21,12 +21,7 @@ export const signin = async (user) => {
   const formData = new FormData();
 
   for (const name in user) {
-    console.info(user[name]);
     formData.append(name, user[name]);
-  }
-
-  for (var key of formData.keys()) {
-    console.log("MYKEY: ", key);
   }
 
   try {
@@ -63,8 +58,6 @@ export const isAuthenticated = () => {
 
 export const signout = async (next) => {
   const userId = isAuthenticated() && isAuthenticated().user.id;
-
-  console.log("USERID: ", userId);
 
   if (typeof window !== undefined) {
     localStorage.removeItem("customToken");

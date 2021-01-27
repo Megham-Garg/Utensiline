@@ -6,7 +6,16 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["oceanatech.pythonanywhere.com", "localhost", ]
+ALLOWED_HOSTS = ["*"]
+
+CORS_ORIIGN_ALLOW_ALL=False
+CORS_ALLOW_CREDENTIALS=True
+CORS_ORIGIN_WHITELIST=[
+    'http://localhost:3000'
+]
+CORS_ORIGIN_REGEX_WHITELIST=[
+    'http://localhost:3000'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,7 +51,7 @@ ROOT_URLCONF = 'ecom.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'build')], #
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -111,14 +120,9 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_URL = '/static/'
 
 STATIC_URL = '/static/'
-
-
-# STATIC_DIR = os.path.join(BASE_DIR,'static')
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
-# STATICFILES_DIRS=[
-#     STATIC_DIR,
-#     STATIC_ROOT,
-# ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build', 'static')
+]

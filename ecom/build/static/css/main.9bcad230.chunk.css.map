@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/styles.css"],"names":[],"mappings":"AAAA,EACE,qBACF,CAEA,KACE,kBACF,CAEA,WACE,eACF,CAEA,WACE,wBACF","file":"main.9bcad230.chunk.css","sourcesContent":["* {\n  box-sizing: border-box;\n}\n\nbody {\n  background: #343a40;\n}\n\n.main_body {\n  min-height: 72vh;\n}\n\n.bg-custom {\n  background-color: #131A22;\n}"]}
